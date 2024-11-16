@@ -5,14 +5,14 @@ public class Nqueens {
     public static void main(String[] args) {
         
     }
-    public static boolean nqueens(int [][]board,int i,int n){
-        //base case
-        if(i==n){display(board);}
-        //
-        for (int j=0; j<n;j++){
+    // public static boolean nqueens(int [][]board,int i,int n){
+    //     //base case
+    //     if(i==n){display(board);}
+    //     //
+    //     for (int j=0; j<n;j++){
             
-        }
-    }
+    //     }
+    // }
     public static boolean checksafe(int [][]board,int i , int j, int n ){
         //cols 
         for (int k =0;k<i;i++){

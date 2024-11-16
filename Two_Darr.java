@@ -1,4 +1,5 @@
-import java.util.*;
+
+import java.util.Arrays;
 public class Two_Darr {
     public static void main(String[] args) {
         int [][] nums ={{1,3,2},{4,5,6},{7,3,9}};
@@ -10,8 +11,8 @@ public class Two_Darr {
         // System.out.println(sum);
 
         // int idx[]=new int[2];
-        // idx=search2d(nums2, 9);
-        // System.out.println(idx[0]+" "+idx[1]);
+        int [] idx=search2d(nums2, 9);
+        System.out.println(idx[0]+" "+idx[1]);
 
         sortcomplete(nums);
         display2d(nums);

@@ -1,35 +1,28 @@
-import java.util.Scanner;
-
+import java.util.*;
 public class Test {
-    public static void main(String[] args) {
-        // Your Code Here
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int m = scn.nextInt();
-        int k = scn.nextInt(); // min S required
-        int s = scn.nextInt();
-        char [][] park = new char [n][m];
-        for (int i =0; i<n;i++){
-            for (int j =0; j<m;j++){
-                park[i][j] = scn.next().charAt(0);
-            }
-        }
-        for (int i =0; i<n;i++){
-            for (int j =0;j<m && s>=k;j++){
-                int t =park[i][j];
-                if(t=='.'){
-                    s-=3;
-                }
-                else if(t=='*'){
-                    s+=4;
-                }
-                else if(t=='#'){
-                    j=-1;
-                    if(i<n-1){i++;}
-                }
-            }
-        }
-        if(s>=k){ System.out.println("Yes"); System.out.println(s);}
-        else {System.out.println("No");}
+    public static void main(String args[]) {
+		Scanner scn = new Scanner(System.in);
+		int t=scn.nextInt();
+		for(int i =0;i<t;i++){
+			String word = scn.nextLine();
+			char [] st= word.toCharArray();
+			boolean ans=false;
+			Map<Character , Integer> fmap= new HashMap<>();
+			for(int j=0;j<st.length;j++){
+				Integer a = fmap.get(st[j]);
+				if(a==null){fmap.put(st[j],1);}
+				else{fmap.put(st[j],a+1);}
+			}
+			for(int j =0;j<st.length;j++){
+				if(fmap.get(st[j])==1){
+					System.out.println(st[j]);
+					ans=true;
+					break;
+				}
+			}
+            System.out.println(fmap.get('d'));
+			if(!ans){System.out.println("-1");}
+		}
+
     }
 }

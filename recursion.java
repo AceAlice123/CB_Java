@@ -9,12 +9,12 @@ public class recursion {
         // // cointoss(3,"");
         // System.out.println(tosscount(3));
         // System.out.println(countsubsequence2("CAR",1));
-        // validParanthesis(6,6,"");
+        validParanthesis(4,4,"");
         // String n= "ABC";
         // System.out.println(n.substring(0, 1)+n.substring(3));
-        permutations("ABCD","");
-        System.out.println("  ////");
-        permutations2("ABCD", "", 1);
+        // permutations("ABCD","");
+        // System.out.println("  ////");
+        // permutations2("ABCD", "", 1);
 
 
     }
@@ -70,10 +70,10 @@ public class recursion {
         return countsubsequence2(q.substring(1),2*count);
     }
     public static void validParanthesis(int n,int p, String paran){
-        if (n%2!=0 && n==p) {n--;p--;}
+        // if (n%2!=0 && n==p) {n--;p--;}
         if(p==0){System.out.println(paran);return;}
-        validParanthesis(n,p-2,"{"+paran+"}");
-        if(n!=p) validParanthesis(n,p-2,paran+"{}");
+        validParanthesis(n,p-1,"{"+paran+"}");
+        if(n!=p) validParanthesis(n,p-1,paran+"{}");
     }
     public static void permutations(String n, String ans){
         if(n.length()==0) {System.out.println(ans);return;}
